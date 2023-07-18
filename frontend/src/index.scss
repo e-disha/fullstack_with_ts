@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+$primary: #1aac83;
+
+body {
+  font-family: "Poppins";
+  background-color: #ebebeb;
+}
+
+h1 {
+  color: $primary;
+  margin-top: -7px;
+  &:hover {
+    color: black;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+header {
+  background: #ebebeb;
+}
+
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #333;
+  text-decoration: none;
+  margin-left: 10px;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.end {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -57px;
+  margin-right: 20px;
+}
+
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.food-details {
+  background: #f5f1f1;
+  border-radius: 25px;
+  margin: 25px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0px -0px 400px -60px rgba(211, 207, 207, 0.63) inset;
+  -webkit-box-shadow: 0px -0px 400px -60px rgba(211, 207, 207, 0.63) inset;
+  -moz-box-shadow: 0px -0px 400px -60px rgba(211, 207, 207, 0.63) inset;
+
+  h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: $primary;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: #f1f1f1;
+    padding: 6px;
+    border-radius: 50%;
+    color: #333;
+  }
+}
+
+label,
+input {
+  display: block;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: $primary;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.food-details {
+  background: #fff;
+  border-radius: 15px;
+  margin: 30px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.05);
+
+  h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: $primary;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  span {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    cursor: pointer;
+    background: #f1f1f1;
+    padding: 6px;
+    border-radius: 25%;
+    color: #333;
+
+    &:hover {
+      background-color: rgb(207, 122, 122);
+      color: white;
+    }
+  }
+}
+
+#title_about {
+  margin-top: 0px;
+  margin-left: 10px;
+}
