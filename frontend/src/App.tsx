@@ -3,10 +3,11 @@ import RootElement from './routes/RootElement'
 import Home from './routes/Home'
 import About from './routes/About'
 import Create from './routes/Create'
+import ErrorElement from './routes/ErrorElement'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={< RootElement />}>
+    <Route path='/' element={< RootElement />} errorElement={<ErrorElement />}>
       <Route index element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='create' element={<Create />} />
