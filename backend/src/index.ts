@@ -3,7 +3,8 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import path from 'path';
-import { router } from './routes/foodRoutes';
+import { foodRouter } from './routes/foodRoutes';
+import { userRouter } from './routes/userRoutes';
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
@@ -18,7 +19,8 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-app.use('/api/foods/', router);
+app.use('/api/foods/', foodRouter);
+app.use('/api/users/', userRouter)
 
 mongoose
   .connect(process.env.MONGO_DB!)
@@ -30,7 +32,7 @@ mongoose
   .catch((error) => console.log(error));
 
 //cors middleware
-app.use((req: Request, res: Response, next: any) => {
+app.use((req: Request, res: Response, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.header('Access-Control-Allow-Headers', 'Content-Type');

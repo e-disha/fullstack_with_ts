@@ -1,7 +1,15 @@
 import axios from "axios";
 import formatDistanceToNow from "date-fns/formatDistanceToNow"
 
-const FoodDetails = ({ food }: { food: any }) => {
+interface Food {
+    _id: string;
+    name: string;
+    macro: number;
+    micro: number;
+    createdAt: string;
+  }
+
+const FoodDetails = ({ food }: { food: Food }) => {
     const deleteFood = () => {
         const id = food._id
             axios.delete(`http://localhost:9000/api/foods/${id}`)
