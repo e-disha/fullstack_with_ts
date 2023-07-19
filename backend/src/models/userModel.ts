@@ -9,6 +9,7 @@ export interface UserDocument extends Document {
 
 export interface UserModel extends Model<UserDocument> {
     signup(email: string, password: string): Promise<UserDocument>;
+    signin(email: string, password: string): Promise<UserDocument>;
 }
 
 const userSchema = new mongoose.Schema<UserDocument>({
@@ -24,6 +25,8 @@ const userSchema = new mongoose.Schema<UserDocument>({
     }
 }, { timestamps: true });
 
+
+//signup method
 userSchema.statics.signup = async function (email, password) {
     //validate email and password
     if(!email||!password){
@@ -49,6 +52,29 @@ userSchema.statics.signup = async function (email, password) {
     const user = await this.create({ email, password: hash });
     return user;
 };
+
+//signin method
+userSchema.statics.signin = async function (email, password){
+    //validate email and password
+    if(!email||!password){
+        throw Error("All fields must be filled")
+    }
+
+    const user = await this.findOne({ email });
+
+    if (!user) {  
+        throw new Error('Incorrect email');
+    }
+
+    const match = await bcrypt.compare(password, user.password)
+
+    if(!match){
+        throw Error('Incorrect password')
+    }
+
+    return user
+}
+
 
 const User: UserModel = mongoose.model<UserDocument, UserModel>('User', userSchema);
 export default User;

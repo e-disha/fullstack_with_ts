@@ -4,6 +4,8 @@ import Home from './routes/Home'
 import About from './routes/About'
 import Create from './routes/Create'
 import ErrorElement from './routes/ErrorElement'
+import { Signin } from './authenticity/Signin'
+import { Signup } from './authenticity/Signup'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -11,6 +13,8 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='create' element={<Create />} />
+      <Route path='signin' element={<Signin />} />
+      <Route path='signup' element={<Signup />} />
     </Route>
   )
 )
